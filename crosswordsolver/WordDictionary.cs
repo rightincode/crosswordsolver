@@ -54,6 +54,10 @@ namespace crosswordsolver
                 {
                     matchedWordsList.Add(match.Value);
                 }
+            } else
+            {
+                stopwatch.Stop();
+                _elapsedTicks = stopwatch.ElapsedTicks;
             }
 
             return matchedWordsList;            ;
