@@ -16,6 +16,8 @@ namespace crosswordsolver
             Console.WriteLine("Initializing");
             WordDictionary words = new WordDictionary();
             Console.WriteLine("Initializaiton Complete");
+            Console.WriteLine();
+            Console.WriteLine("Welcome to the crossword solver.");
 
             do {
 
@@ -41,8 +43,7 @@ namespace crosswordsolver
         }
 
         static void PromptUser()
-        {
-            Console.WriteLine("Welcome to the crossword solver.");
+        {            
             Console.Write("Please enter the length (numerical value) of the word(s) you are searching: ");
             int.TryParse(Console.ReadLine(), out inputLength);
 

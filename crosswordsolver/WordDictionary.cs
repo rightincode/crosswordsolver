@@ -42,15 +42,18 @@ namespace crosswordsolver
             stopwatch.Reset();
             stopwatch.Start();
 
-            var matchedWordsByLength = _wordDictionary[length];
-            MatchCollection matchedWords = searchExp.Matches(matchedWordsByLength);
-
-            stopwatch.Stop();
-            _elapsedTicks = stopwatch.ElapsedTicks;
-            
-            foreach (Match match in matchedWords)
+            if (_wordDictionary.ContainsKey(length))
             {
-                matchedWordsList.Add(match.Value);
+                var matchedWordsByLength = _wordDictionary[length];
+                MatchCollection matchedWords = searchExp.Matches(matchedWordsByLength);
+
+                stopwatch.Stop();
+                _elapsedTicks = stopwatch.ElapsedTicks;
+
+                foreach (Match match in matchedWords)
+                {
+                    matchedWordsList.Add(match.Value);
+                }
             }
 
             return matchedWordsList;            ;
